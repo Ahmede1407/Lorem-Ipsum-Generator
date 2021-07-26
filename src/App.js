@@ -7,7 +7,15 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted");
+    let countNumber = parseInt(count);
+    // console.log(typeof countNumber, countNumber);
+    if (countNumber <= 0) {
+      countNumber = 1;
+    }
+    if (countNumber > 8) {
+      countNumber = 8;
+    }
+    setText(data.slice(0, countNumber));
   };
 
   return (
@@ -27,18 +35,11 @@ const App = () => {
         </button>
       </form>
 
-      <article className="lorem-text">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-          voluptatum deserunt corporis illo, harum eius maxime iste voluptatem
-          repudiandae esse.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis
-          voluptatum deserunt corporis illo, harum eius maxime iste voluptatem
-          repudiandae esse.
-        </p>
-      </article>
+      {text.map((singleParagragh, index) => {
+        return <p key={index}>{singleParagragh}</p>;
+      })}
+
+      <article className="lorem-text">{}</article>
     </section>
   );
 };
