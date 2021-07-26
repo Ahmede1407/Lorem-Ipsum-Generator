@@ -12,8 +12,8 @@ const App = () => {
     if (countNumber <= 0) {
       countNumber = 1;
     }
-    if (countNumber > 8) {
-      countNumber = 8;
+    if (countNumber > 10) {
+      countNumber = 10;
     }
     setText(data.slice(0, countNumber));
   };
